@@ -130,8 +130,6 @@ if __name__ == "__main__":
 
     conf.set("DEFAULT","install_dir",icor_dir)
 
-
-
     if args.data_type == "L8":
         print "running icor for Landsat8 ..." + icor_dir
         print "reading config " + icor_dir + "/src/config/local_landsat8_simec.ini"
