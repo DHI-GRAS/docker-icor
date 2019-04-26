@@ -17,6 +17,9 @@ ENV ICOR_DIR /opt/vito/icor
 WORKDIR /work
 RUN chmod 777 /work
 
+RUN rm -r /opt/vito/icor/src
+ADD icor-src /opt/vito/icor/src
+
 # set entrypoint
 ENTRYPOINT ["python2", "/opt/vito/icor/src/icor.py"]
 CMD ["--help"]
