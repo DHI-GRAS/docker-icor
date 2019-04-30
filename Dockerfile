@@ -14,8 +14,10 @@ RUN yes y | ./icor-install.bin
 
 ENV ICOR_DIR /opt/vito/icor
 
+VOLUME ["/mnt/input-dir"]
+VOLUME ["/mnt/output-dir"]
 WORKDIR /work
-RUN chmod 777 /work
+RUN chmod 777 /work /mnt/output-dir
 
 RUN rm -r /opt/vito/icor/src
 ADD icor-src /opt/vito/icor/src
