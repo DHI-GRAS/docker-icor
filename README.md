@@ -16,5 +16,5 @@ docker build -t dhigras/icor
 The container exposes the iCOR command-line interface. To see all the options, just run it.
 
 ```bash
-docker run icor
+docker run dhigras/icor
 ```
