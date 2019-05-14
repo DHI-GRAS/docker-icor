@@ -19,6 +19,9 @@ VOLUME ["/mnt/output-dir"]
 WORKDIR /work
 RUN chmod 777 /work /mnt/output-dir
 
+RUN rm -r /opt/vito/icor/src
+ADD icor-src /opt/vito/icor/src
+
 # set entrypoint
 ENTRYPOINT ["python2", "/opt/vito/icor/src/icor.py"]
 CMD ["--help"]
