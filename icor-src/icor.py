@@ -37,14 +37,12 @@ def process_product(context, product):
                 raise "Unknown 'instrument'"
         elif context["instrument"] == "sentinel2":
             if context["workflow"] == "simec":
-
                 icor.sentinel2.process_saf(context, product, working_folder)
             else:
                 raise "Unknown 'instrument'"
 
         elif context["instrument"] == "sentinel3":
             if context["workflow"] == "simec":
-
                 icor.sentinel3.process(context, product, working_folder)
             else:
                 raise "Unknown 'instrument'"

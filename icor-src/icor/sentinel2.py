@@ -87,13 +87,9 @@ def process_saf(context, path, dir=os.getcwd()):
     # -------------------------------------------------------------------------
 
     for granule in granules:
-        print("create thread for granule " + granule.base_name)
+        print("processing granule " + granule.base_name)
         thread_context = context.copy_self()
-        t = threading.Thread(target=sentinel2_granule, args=(granule, thread_context, dir))
-        t.start()
-        t.join()
-
-        # thread_list.append(t)
+        sentinel2_granule(granule, thread_context, dir)
 
 
 def sentinel2_granule(granule, thread_context, dir):
